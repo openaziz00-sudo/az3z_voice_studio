@@ -1,4 +1,4 @@
-import { ENV } from "./_core/env";
+import { ENV } from "./_core/env.js";
 
 const API_BASE = "https://api.elevenlabs.io/v1";
 

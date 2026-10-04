@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
-import { storageGet, storagePut } from "./storage";
+import { storageGet, storagePut } from "./storage.js";
 
 afterEach(() => {
   vi.unstubAllEnvs();

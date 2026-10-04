@@ -1,9 +1,9 @@
 import express, { type Express, type NextFunction, type Request, type Response } from "express";
 import { createExpressMiddleware } from "@trpc/server/adapters/express";
-import { appRouter } from "../routers";
-import { createContext } from "./context";
-import { registerOAuthRoutes } from "./oauth";
-import { publicPlatformScript } from "./publicConfig";
+import { appRouter } from "../routers.js";
+import { createContext } from "./context.js";
+import { registerOAuthRoutes } from "./oauth.js";
+import { publicPlatformScript } from "./publicConfig.js";
 
 /** Attach the routes shared by the Manus server and Vercel's Express function. */
 export function configureApp(app: Express) {

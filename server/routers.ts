@@ -9,9 +9,9 @@ import {
   userPreferences,
   voiceAssets,
   voiceProfiles,
-} from "../drizzle/schema";
-import { storageGet, storagePut } from "./storage";
-import { getDb } from "./db";
+} from "../drizzle/schema.js";
+import { storageGet, storagePut } from "./storage.js";
+import { getDb } from "./db.js";
 import {
   createInstantVoiceClone,
   deleteElevenLabsVoice,
@@ -20,11 +20,11 @@ import {
   safeElevenLabsError,
   testElevenLabsConnection,
   transcribeAudio,
-} from "./elevenlabs";
-import { systemRouter } from "./_core/systemRouter";
-import { protectedProcedure, publicProcedure, router } from "./_core/trpc";
+} from "./elevenlabs.js";
+import { systemRouter } from "./_core/systemRouter.js";
+import { protectedProcedure, publicProcedure, router } from "./_core/trpc.js";
 import { COOKIE_NAME } from "@shared/const";
-import { getSessionCookieOptions } from "./_core/cookies";
+import { getSessionCookieOptions } from "./_core/cookies.js";
 
 const DEFAULT_PREFERENCES = { language: "ar" as const, theme: "dark" as const, saveToCloud: true };
 const IS_VERCEL = process.env.VERCEL === "1";

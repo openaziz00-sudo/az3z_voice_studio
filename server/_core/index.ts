@@ -2,8 +2,8 @@ import "dotenv/config";
 import { createServer } from "node:http";
 import { resolve } from "node:path";
 import { fileURLToPath } from "node:url";
-import { createApp } from "./app";
-import { serveStatic, setupVite } from "./vite";
+import { createApp } from "./app.js";
+import { serveStatic, setupVite } from "./vite.js";
 
 const app = createApp();
 const server = createServer(app);
