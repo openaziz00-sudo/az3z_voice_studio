@@ -23,7 +23,7 @@ import {
 } from "./elevenlabs.js";
 import { systemRouter } from "./_core/systemRouter.js";
 import { protectedProcedure, publicProcedure, router } from "./_core/trpc.js";
-import { COOKIE_NAME } from "@shared/const";
+import { COOKIE_NAME } from "../shared/const";
 import { getSessionCookieOptions } from "./_core/cookies.js";
 
 const DEFAULT_PREFERENCES = { language: "ar" as const, theme: "dark" as const, saveToCloud: true };
