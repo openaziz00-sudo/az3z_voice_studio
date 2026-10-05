@@ -8,6 +8,9 @@ import { serveStatic, setupVite } from "./vite.js";
 const app = createApp();
 const server = createServer(app);
 
+// Vercel imports this file as the Express function entrypoint.
+export default app;
+
 async function startServer() {
   if (process.env.NODE_ENV === "development") {
     await setupVite(app, server);
