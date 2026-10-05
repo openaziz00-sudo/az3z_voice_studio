@@ -1,5 +1,18 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": "express",
-  "buildCommand": "VERCEL=1 pnpm build"
+  "buildCommand": "VERCEL=1 pnpm build",
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/index.cjs"
+    },
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.cjs"
+    }
+  ]
 }
