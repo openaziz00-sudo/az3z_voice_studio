@@ -1,7 +1,5 @@
 import "dotenv/config";
 import { createServer } from "node:http";
-import { resolve } from "node:path";
-import { fileURLToPath } from "node:url";
 import { createApp } from "./app.js";
 import { serveStatic, setupVite } from "./vite.js";
 
@@ -24,7 +22,8 @@ async function startServer() {
   server.listen(port, "0.0.0.0", () => console.log(`Server listening on port ${port}`));
 }
 
-const entryFile = process.argv[1] ? resolve(process.argv[1]) : "";
-if (entryFile === fileURLToPath(import.meta.url)) {
+const isDirectServerStart = process.env.VERCEL !== "1" &&
+  (process.argv[1]?.endsWith("server/_core/index.ts") || process.argv[1]?.endsWith("dist/index.js"));
+if (isDirectServerStart) {
   startServer().catch(error => { console.error(error); process.exit(1); });
 }
