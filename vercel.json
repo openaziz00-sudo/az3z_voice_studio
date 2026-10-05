@@ -4,7 +4,7 @@
   "buildCommand": "VERCEL=1 pnpm build",
   "functions": {
     "index.cjs": {
-      "includeFiles": ["public/**"]
+      "includeFiles": "public/**"
     }
   }
 }
